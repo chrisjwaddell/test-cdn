@@ -1,0 +1,1973 @@
+@charset "UTF-8";
+/* ==========================================================================
+   #MAIN
+   ========================================================================== */
+/*
+    $color-  are global color variables
+    $global-- are globals set in .global.scss
+*/
+/* CUSTOM COLOURS */
+/* colour - color, background, border, hover */
+/* I may need 2 or 3 of these */
+/* border, hover, outline colors should be set
+  depending on what type of field it is
+  set in fields.scss
+*/
+/* ==========================================================================
+   #MAIN
+   ========================================================================== */
+/*
+    $color-  are global color variables
+    $global-- are globals set in .global.scss
+*/
+/* put global CSS variables here */
+/* l-colour or brand-colour */
+/* .<l-colour> { color: var(--<l-colour>); }
+.bg-<l-colour> { background-color: var(--<l-colour>); }
+.b-<l-colour> { border-color: var(--<l-colour>); }
+.hover-<l-colour>:hover { color: var(--<l-colour>); }
+.hover-bg-<l-colour>:hover { background-color: var(--<l-colour>); }
+.hover-b-<l-colour>:hover { border-color: var(--<l-colour>); } */
+:root {
+  --color-bg-board: rgb(188.8534482759, 150.75, 232);
+}
+
+/* ==========================================================================
+   #MIXINS
+   ========================================================================== */
+/* ==========================================================================
+   #MAIN
+   ========================================================================== */
+a {
+  text-decoration: none;
+  color: rgb(57, 128, 242);
+  cursor: pointer;
+}
+
+.link--primary {
+  color: rgb(155, 87, 232);
+  font-weight: 400;
+  text-decoration: none;
+  font-family: arial, helvetica, sans-serif;
+  text-decoration: underline;
+}
+.link--primary:hover:after {
+  height: 1.3rem;
+}
+
+/* ==========================================================================
+   #MAIN
+   ========================================================================== */
+/* ==========================================================================
+   #FIELDS
+   ========================================================================== */
+/**
+ * This makes input boxes look nicer instead of the default boring design
+ * For styling, use a style variant
+ * input HTML should include placeholder, required and tabindex attributes
+ */
+/*
+ * Some example code
+ * <div class="fld-container  o-center-x">
+ * 	<label for="pswd" class="fld-label">Password</label>
+ * 	<input type="password" id="pswd" name="password" class="e-input--primary" maxlength="25">
+ *	<p class="warning u-text-center  c-red">Enter your password</p>
+ * </div>
+
+ * This code doesn't have all the styling like fld-all, fld-txt-all,
+ * <div class="fld-group">
+ * 	<div class="fld-container fld-container-w1 o-center-x">
+ * 		<label for="firstname" class="fld-label">First name</label>
+ * 		<input type="text" id="firstname" name="firstname" class="e-input--primary">
+ * 	</div>
+
+ * 	<div class="fld-container fld-container-w1 o-center-x">
+ * 		<label for="lastname" class="fld-label">Last name</label>
+ * 		<input type="text" id="lastname" name="latname" class="e-input--primary">
+ * 	</div>
+
+ * 	<div class="fld-container fld-container-w1 o-center-x">
+ * 		<label for="email" class="fld-label">Email</label>
+ * 		<input type="email" id="email" name="email" class="e-input--primary">
+ * 	</div>
+* </div>
+*/
+/*
+* https://codepen.io/zellwk/pen/NeRaPw
+* input box empty, uses ::placeholder-shown
+* doing it via javascript is better because on open is different
+* than after leaving the first time leaving it blank
+*/
+label,
+input {
+  /* display: block; */
+  margin: 0 auto;
+}
+
+label {
+  font-size: 24px;
+  /* font-weight: 600; */
+}
+
+input {
+  /* width: 100%; */
+  font-size: 20px;
+  width: 60px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.fld-section {
+  display: flex;
+  max-width: 1100px;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  padding-bottom: 80px;
+  width: 1100px;
+}
+
+@media screen and (max-width: 1150px) {
+  .fld-section {
+    width: 600px;
+  }
+}
+.fld-section:first-of-type {
+  margin: 25px auto 0 0;
+}
+
+.group2 > .fld-group:not(:first-of-type) {
+  padding-top: 0px;
+}
+
+@media screen and (max-width: 1100px) {
+  .group2 {
+    visibility: hidden;
+  }
+}
+.fld-group {
+  flex-basis: 550px;
+  flex-shrink: unset;
+  flex-grow: unset;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: row;
+}
+
+.fld-group.w1 {
+  flex-basis: 275px;
+  width: 275px;
+}
+
+.fld-group .w2 {
+  flex-basis: 550px;
+  width: 550px;
+}
+
+.fld-group .w1.h1,
+.fld-group .w2.h1,
+.fld-group .w3.h1,
+.fld-group .w4.h1 {
+  flex-basis: 42px;
+}
+
+.fld-group.w3 {
+  flex-basis: 825px;
+  width: 825px;
+}
+
+.fld-group.w4 {
+  flex-basis: 1100px;
+  width: 1100px;
+}
+
+.fld-container {
+  display: flex;
+  min-width: 1px;
+  flex-direction: column;
+  min-height: 140px;
+  height: 140px;
+  width: 375px;
+}
+
+.fld-container-w1 {
+  flex-basis: 275px;
+  flex-shrink: unset;
+  flex-grow: unset;
+}
+
+.fld-container-w2 {
+  flex-basis: 550px;
+  flex-shrink: unset;
+  flex-grow: unset;
+}
+
+.fld-container-w3 {
+  flex-basis: 825px;
+  flex-shrink: unset;
+  flex-grow: unset;
+}
+
+.fld-container-w4 {
+  flex-basis: 1100px;
+  flex-shrink: unset;
+  flex-grow: unset;
+}
+
+.fld-container.h2 {
+  height: 280px;
+}
+
+.fld-container.h3 {
+  height: 420px;
+}
+
+.fld-container.h4 {
+  height: 560px;
+}
+
+.fld-label-pages {
+  padding: 0 0 0 4px;
+  font-size: 18px;
+  font-size: 18px;
+  line-height: 1;
+  color: #000000;
+  font-weight: 600;
+}
+
+.fld-label-primary {
+  padding: 0 0 0 5px;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 400;
+  margin: auto auto auto 5px;
+}
+
+.modal .modal__remember input,
+.modal .modal__remember--new input {
+  font-size: 16px;
+}
+
+/* labels and all fields  */
+.fld-txt-all {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 27px;
+  font-weight: 400;
+  color: #3d474d;
+  text-align: start;
+  letter-spacing: normal;
+  word-spacing: normal;
+  writing-mode: horizontal-tb;
+  margin-left: 10px;
+  /* not sure if these appearance ones should be in */
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  text-decoration: initial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fld-txt-all.single-line {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.fld-txt-all.multi-line {
+  line-height: 1.4;
+  padding: 7px 7px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  overflow-x: hidden;
+  white-space: pre-wrap;
+  -webkit-line-break: after-white-space;
+}
+
+/* all fields, labels not included */
+.fld-all {
+  height: 41px;
+  margin-top: 10px;
+  padding: 2px 7px;
+  box-sizing: border-box;
+  cursor: text;
+  user-select: text;
+  background: transparent;
+  border-radius: 5px;
+  border: 1px solid #d5d5d5;
+}
+.fld-all:hover, .fld-all:focus, .fld-all:active {
+  background-color: #fbfbfb;
+  border-color: rgb(155, 87, 232);
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.04), 2px 2px 2px rgba(0, 0, 0, 0.04), 4px 4px 4px rgba(0, 0, 0, 0.04);
+  -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.04), 2px 2px 2px rgba(0, 0, 0, 0.04), 4px 4px 4px rgba(0, 0, 0, 0.04);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.04), 2px 2px 2px rgba(0, 0, 0, 0.04), 4px 4px 4px rgba(0, 0, 0, 0.04);
+  -webkit-transition: all ease-in-out 0.4s, box-shadow ease-in-out 0.15s;
+  transition: all ease-in-out 0.4s, box-shadow ease-in-out 0.15s;
+}
+.fld-all:focus, .fld-all:active {
+  border-color: rgb(155, 87, 232);
+  outline: none !important;
+  -webkit-transition: all ease-in-out 0.4s, box-shadow ease-in-out 0.15s;
+  transition: all ease-in-out 0.4s, box-shadow ease-in-out 0.15s;
+}
+
+.fld-chk {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  border: 1px solid #111111;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #fff;
+  color: #d3d6db;
+  outline: none;
+  cursor: pointer;
+  /* box-shadow: 4px 6px 5px -3px #e5e5e5; */
+  -webkit-transition: all ease-in-out 0.4s, box-shadow ease-in-out 0.15s;
+  transition: all ease-in-out 0.4s, box-shadow ease-in-out 0.15s;
+}
+
+.fld-chk:hover {
+  color: #aeb1b5;
+  color: #ffffff;
+  border: 1px solid rgb(155, 87, 232);
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.04), 2px 2px 2px rgba(0, 0, 0, 0.04), 4px 4px 4px rgba(0, 0, 0, 0.04);
+  -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.04), 2px 2px 2px rgba(0, 0, 0, 0.04), 4px 4px 4px rgba(0, 0, 0, 0.04);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.04), 2px 2px 2px rgba(0, 0, 0, 0.04), 4px 4px 4px rgba(0, 0, 0, 0.04);
+  /* -webkit-transition: all ease-in-out .35s, box-shadow ease-in-out .15s;
+       transition: all ease-in-out .35s, box-shadow ease-in-out .15s; */
+}
+
+.fld-chk:checked:hover {
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.04), 2px 2px 2px rgba(0, 0, 0, 0.04), 4px 4px 4px rgba(0, 0, 0, 0.04);
+  -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.04), 2px 2px 2px rgba(0, 0, 0, 0.04), 4px 4px 4px rgba(0, 0, 0, 0.04);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.04), 2px 2px 2px rgba(0, 0, 0, 0.04), 4px 4px 4px rgba(0, 0, 0, 0.04);
+}
+
+.fld-chk::after {
+  content: "✔";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  line-height: 1;
+  font-size: 19px;
+}
+
+.fld-chk:checked {
+  background-color: #3cb371;
+  /* box-shadow: none; */
+  color: transparent;
+  border: none;
+}
+
+.fld-chk:checked::after {
+  opacity: 1;
+}
+
+.fld-chk:active {
+  transform: scale(0);
+}
+
+.fld-chk:disabled:after {
+  transform: scale(1);
+  border-color: #aaa;
+}
+
+.fld-chk:checked:disabled:after {
+  transform: scale(1);
+}
+
+.fld-chk-lbl {
+  /* flex: 1; */
+  display: inline-block;
+  height: 100px;
+  /* block width - tickbox width */
+  font-size: 18px;
+  line-height: 1.25;
+  overflow: hidden;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+.fld-warn {
+  border: 1px solid rgb(159, 16, 46);
+  outline: 1px solid rgb(159, 16, 46);
+}
+
+/* ==========================================================================
+   #MAIN
+   ========================================================================== */
+/* ==========================================================================
+   #INPUT
+   ========================================================================== */
+/**
+ * This makes input boxes look nicer instead of the default boring design
+ * For styling, use a style variant
+ * input HTML should include placeholder, required and tabindex attributes
+ */
+/*
+ * https://codepen.io/zellwk/pen/NeRaPw
+* input box empty, uses ::placeholder-shown
+ */
+label,
+input {
+  /* display: block; */
+  margin: 0 auto;
+}
+
+label {
+  font-size: 24px;
+  /* font-weight: 600; */
+}
+
+input {
+  /* width: 100%; */
+  font-size: 20px;
+  width: 60px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+input[type=text],
+textarea {
+  border-radius: 2px;
+}
+
+/* Style variants
+   ========================================================================== */
+.name {
+  text-align: left;
+  border-radius: 5px;
+  visibility: hidden;
+  outline: none;
+  border: 1px solid rgb(68, 85, 187);
+}
+
+.e-input--primary {
+  height: 28px;
+  padding: 0.25em 0.5em;
+  font-size: 22px;
+  font-family: "Source Sans Pro", sans-serif;
+  border-radius: 6px;
+}
+.e-input--primary:focus, .e-input--primary:active {
+  outline: none;
+  border: 1px solid purple;
+}
+.e-input--secondary {
+  height: 2rem;
+  padding: 0.25em 0.5em;
+  font-size: 22px;
+  font-family: "Source Sans Pro", sans-serif;
+  border: 2px solid rgb(155, 87, 232);
+  border-radius: 12px;
+}
+.e-input--secondary:focus, .e-input--secondary:active {
+  color: white;
+  outline: none;
+  border: 1px solid #f4f4f4;
+}
+.e-input--form {
+  height: 36px;
+  padding: 0.25em 0.5em;
+  font-size: 18px;
+  font-family: "Source Sans Pro", sans-serif;
+  border: 2px solid rgb(155, 87, 232);
+  border-radius: 5px;
+}
+.e-input--form:hover, .e-input--form:focus, .e-input--form:active {
+  background-color: #f4f4f4;
+  transition: background-color 0.2s linear, color 0.2s linear;
+}
+.e-input--form:focus, .e-input--form:active {
+  outline: none;
+  border: 1px solid purple;
+}
+
+/* Size variants
+   ========================================================================== */
+.c-input--small {
+  padding: 6px 12px;
+}
+
+.c-input--large {
+  padding: 24px 48px;
+}
+
+/**
+ * Positive buttons skin. Extends `.btn`.
+ */
+.e-input--positive {
+  background-color: green;
+  color: white;
+}
+
+/**
+ * Negative buttons skin. Extends `.btn`.
+ */
+.e-input--negative {
+  background-color: red;
+  color: white;
+}
+
+/**
+  For label and input, label on top
+*/
+.fld--col {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+
+.fld--col label {
+  margin: 0 0 4px 0;
+  padding: 0;
+}
+
+.fld--row {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+}
+
+.fld--row .fld-label-pages,
+.fld--row .fld-label-primary {
+  margin: auto 15px auto 0;
+}
+
+.input-standard {
+  border-radius: 2px;
+  font-size: 16px;
+}
+
+.taskEdit .e-input--primary {
+  font-size: 17px;
+  position: relative;
+}
+
+/* Fields that have label and field in a row, not next to each other
+   ========================================================================== */
+/*
+* <div class="fld-container  fld-row  o-center-x">
+*   <label for="pswd"class="fld-label  fld-row">Password</label>
+*   <input type="password"id="pswd"name="password" class="e-input--primary  fld-row"placeholder="Password"maxlength="25">
+*   <p class="warning u-text-center  c-red">Enter your password</p>
+* </div>
+*/
+.fld-container.fld-row {
+  height: 80px;
+  min-height: 70px;
+}
+
+.fld-label-pages.fld-row,
+.fld-label-primary.fld-row {
+  width: 100%;
+  text-align: left !important;
+  padding: 0 0 5px 2px;
+}
+
+input.e-input--primary.fld-row {
+  width: 100%;
+}
+
+input.e-input--form.fld-row {
+  width: 100%;
+}
+
+/* ==========================================================================
+   #BASE-FRAMEWORK
+   ========================================================================== */
+/**
+ * CSS framework code that's handy
+ *
+ */
+.tc {
+  text-align: center;
+}
+
+.mac {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dib {
+  display: inline-block;
+}
+
+.db {
+  display: block;
+}
+
+.he-100-p {
+  height: 100%;
+}
+
+.dn {
+  display: none;
+}
+
+.pr {
+  position: relative;
+}
+
+.pa {
+  position: absolute;
+}
+
+.mb3 {
+  margin-bottom: 3rem;
+}
+
+.mt3 {
+  margin-top: 3rem;
+}
+
+.b-black {
+  border: 1px solid #000000;
+}
+
+.mt-tiny {
+  margin-top: 6px;
+}
+
+.mt-small {
+  margin-top: 12px;
+}
+
+.mt {
+  margin-top: 24px;
+}
+
+.mt-large {
+  margin-top: 48px;
+}
+
+.mt-huge {
+  margin-top: 96px;
+}
+
+.b-black {
+  border: 1px solid #000000;
+}
+
+.dfi {
+  display: flex !important;
+}
+
+.ishidden {
+  visibility: hidden !important;
+}
+
+.op-100 {
+  opacity: 1;
+}
+
+.field-description {
+  font-size: 12px;
+  font-style: italic;
+}
+
+.isvisible {
+  visibility: visible !important;
+}
+
+.tick {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='green' stroke='green' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%0A%3E%3Cpolyline points='20 6 9 17 4 12' /%3E%3C/svg%3E%0A");
+}
+
+.cross {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='red' stroke='red' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%0A%3E%3Cline x1='18' y1='6' x2='6' y2='18' /%3E%3Cline x1='6' y1='6' x2='18' y2='18' /%3E%3C/svg%3E");
+}
+
+/* ==========================================================================
+   #BASE-FRAMEWORK
+   ========================================================================== */
+/*  Flexbox is used extensively in webpage layout thesedays
+    Why not have some core flex classes with basic flex properties
+    Instead of writing lots of flex CSS code all throughout
+    your CSS files.
+*/
+.flro {
+  display: flex;
+  flex-direction: row;
+}
+
+.flco {
+  display: flex;
+  flex-direction: column;
+}
+
+.flrr {
+  display: flex;
+  flex-direction: row;
+}
+
+.flcr {
+  display: flex;
+  flex-direction: column;
+}
+
+.flro.xce,
+.flrr.xce,
+.flco.yce,
+.flcr.yce {
+  justify-content: center;
+}
+
+.flro.xle,
+.flrr.xle,
+.flco.yto,
+.flcr.yto {
+  justify-content: flex-start;
+}
+
+.flro.xri,
+.flrr.xri,
+.flco.ybo,
+.flcr.ybo {
+  justify-content: flex-end;
+}
+
+.flro.xbe,
+.flrr.xbe,
+.flco.ybe,
+.flcr.ybe {
+  justify-content: space-between;
+}
+
+.flro.xar,
+.flrr.xar,
+.flco.yar,
+.flcr.yar {
+  justify-content: space-around;
+}
+
+.flro.xev,
+.flrr.xev,
+.flco.yev,
+.flcr.yev {
+  justify-content: space-evenly;
+}
+
+.flro.xst,
+.flrr.xst,
+.flco.yst,
+.flcr.yst {
+  justify-content: stretch;
+}
+
+.flro.yce,
+.flrr.yce,
+.flco.xce,
+.flcr.xce {
+  align-items: center;
+}
+
+.flro.yto,
+.flrr.yto,
+.flco.xle,
+.flcr.xle {
+  align-items: flex-start;
+}
+
+.flro.ybo,
+.flrr.ybo,
+.flco.xri,
+.flcr.xri {
+  align-items: flex-end;
+}
+
+.flro.yst,
+.flrr.yst,
+.flco.xst,
+.flcr.xst {
+  align-items: stretch;
+}
+
+.flro.yba,
+.flrr.yba,
+.flco.xba,
+.flcr.xba {
+  align-items: baseline;
+}
+
+.flro.xyce,
+.flrr.xyce,
+.flco.xyce,
+.flcr.xyce {
+  justify-content: center;
+  align-items: center;
+}
+
+.flro.wrap,
+.flrr.wrap,
+.flco.wrap,
+.flcr.wrap {
+  flex-wrap: wrap !important;
+}
+
+.flro.nowrap,
+.flrr.nowrap,
+.flco.nowrap,
+.flcr.nowrap {
+  flex-wrap: nowrap !important;
+}
+
+.flro.wrap-reverse,
+.flrr.wrap-reverse,
+.flco.wrap-reverse,
+.flcr.wrap-reverse {
+  flex-wrap: wrap-reverse !important;
+}
+
+.o-flex--1 {
+  flex: 1;
+}
+
+.o-flex--2 {
+  flex: 2;
+}
+
+.o-flex--3 {
+  flex: 3;
+}
+
+.o-flex--4 {
+  flex: 4;
+}
+
+.o-layout-abs-tl {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* ==========================================================================
+   #MAIN
+   ========================================================================== */
+/* ==========================================================================
+   #FRAMEWORK - COLORS
+   ========================================================================== */
+/* This is handy for inline css, css only for that page
+*  l-colour or brand-colour
+* Work out how I'll do this, I don't want many css variables
+* maybe just --color-brand, --color-primary, --color-secondary
+*/
+/* Not sure how to use these classes */
+:root {
+  --color-brand: rgb(155, 87, 232);
+  --color-primary: rgb(155, 87, 232);
+  --color-secondary: rgb(64, 33, 66);
+  --color-tertiary: rgb(119, 119, 255);
+  --color-positive: rgb(63, 153, 15);
+  --color-positive2: rgb(0, 255, 0);
+  --color-negative: rgb(159, 16, 46);
+  --color-negative2: rgb(255, 0, 0);
+  --color-orange: rgb(225, 150, 60);
+  --color-archive: rgb(155, 85, 20);
+}
+
+.c-p {
+  color: rgb(155, 87, 232);
+}
+
+.bg-p {
+  background-color: rgb(155, 87, 232);
+}
+
+.b-p {
+  border-color: rgb(155, 87, 232);
+}
+
+.hover-c-p:hover {
+  color: rgb(155, 87, 232);
+}
+
+.hover-bg-p:hover {
+  background-color: rgb(155, 87, 232);
+}
+
+.hover-b-p:hover {
+  border-color: rgb(155, 87, 232);
+}
+
+.c-s {
+  color: rgb(64, 33, 66);
+}
+
+.bg-s {
+  background-color: rgb(64, 33, 66);
+}
+
+.b-s {
+  border-color: rgb(64, 33, 66);
+}
+
+.hover-c-s:hover {
+  color: rgb(64, 33, 66);
+}
+
+.hover-bg-s:hover {
+  background-color: rgb(64, 33, 66);
+}
+
+.hover-b-s:hover {
+  border-color: rgb(64, 33, 66);
+}
+
+.c-t {
+  color: rgb(119, 119, 255);
+}
+
+.bg-t {
+  background-color: rgb(119, 119, 255);
+}
+
+.b-t {
+  border-color: rgb(119, 119, 255);
+}
+
+.hover-c-t:hover {
+  color: rgb(119, 119, 255);
+}
+
+.hover-bg-t:hover {
+  background-color: rgb(119, 119, 255);
+}
+
+.hover-b-t:hover {
+  border-color: rgb(119, 119, 255);
+}
+
+.c-white {
+  color: #ffffff;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.b-white {
+  border: 1px solid #ffffff;
+}
+
+.c-black {
+  color: #000000;
+}
+
+.bg-black {
+  background-color: #000000;
+}
+
+.b-black {
+  border: 1px solid #000000;
+}
+
+.c-red {
+  color: rgb(255, 0, 0);
+}
+
+.bg-red {
+  background-color: rgb(255, 0, 0);
+}
+
+.b-red {
+  border: 1px solid rgb(255, 0, 0);
+}
+
+.b-warn {
+  border-color: #c23934 !important;
+}
+
+.bg-warn {
+  background-color: #f6e2e1 !important;
+}
+
+/* ==========================================================================
+   #CONTAINER
+   ========================================================================== */
+.o-container {
+  width: 100%;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .o-container {
+    max-width: 450px;
+  }
+}
+@media (min-width: 768px) {
+  .o-container {
+    max-width: 740px;
+  }
+}
+@media (min-width: 992px) {
+  .o-container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1250px) {
+  .o-container {
+    max-width: 1250px;
+  }
+}
+/* ==========================================================================
+   #LAYOUT
+   ========================================================================== */
+.o-center-x {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.o-center-y {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.abs-tl {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.abs-cc {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.abs-tr {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.abs-bl {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.abs-br {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.outer-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: scroll;
+  z-index: 0;
+}
+
+/* ==========================================================================
+   #LIST-BARE
+   ========================================================================== */
+/**
+ * Strip list-like appearance from lists by removing their bullets and any
+ * indentation.
+ *
+ * Note: Declaring the item class might not be necessary everywhere,
+ * but is for example in <dl> lists for the <dd> children.
+ */
+.list-bare {
+  list-style: none;
+  margin-left: 0;
+}
+
+.list-bare__item {
+  margin-left: 0;
+}
+
+/* ==========================================================================
+   #LIST-INLINE
+   ========================================================================== */
+/**
+ * The list-inline object simply displays a list of items in one line.
+ */
+.o-list-inline {
+  margin-left: 0;
+  list-style: none;
+}
+
+.o-list-inline__item {
+  display: inline-block;
+}
+
+/* ==========================================================================
+   #SPACINGS
+   ========================================================================== */
+/**
+ * Utility classes to put specific spacing values onto elements. The below loop
+ * will generate us a suite of classes like:
+ *
+ *   .u-margin-top {}
+ *   .u-padding-left-large {}
+ *   .u-margin-right-small {}
+ *   .u-padding {}
+ *   .u-padding-right-none {}
+ *   .u-padding-horizontal {}
+ *   .u-padding-vertical-small {}
+ */
+.u-padding {
+  padding: 24px !important;
+}
+
+.u-padding-tiny {
+  padding: 6px !important;
+}
+
+.u-padding-small {
+  padding: 12px !important;
+}
+
+.u-padding-large {
+  padding: 48px !important;
+}
+
+.u-padding-huge {
+  padding: 96px !important;
+}
+
+.u-padding-none {
+  padding: 0 !important;
+}
+
+.u-padding-top {
+  padding-top: 24px !important;
+}
+
+.u-padding-top-tiny {
+  padding-top: 6px !important;
+}
+
+.u-padding-top-small {
+  padding-top: 12px !important;
+}
+
+.u-padding-top-large {
+  padding-top: 48px !important;
+}
+
+.u-padding-top-huge {
+  padding-top: 96px !important;
+}
+
+.u-padding-top-none {
+  padding-top: 0 !important;
+}
+
+.u-padding-right {
+  padding-right: 24px !important;
+}
+
+.u-padding-right-tiny {
+  padding-right: 6px !important;
+}
+
+.u-padding-right-small {
+  padding-right: 12px !important;
+}
+
+.u-padding-right-large {
+  padding-right: 48px !important;
+}
+
+.u-padding-right-huge {
+  padding-right: 96px !important;
+}
+
+.u-padding-right-none {
+  padding-right: 0 !important;
+}
+
+.u-padding-bottom {
+  padding-bottom: 24px !important;
+}
+
+.u-padding-bottom-tiny {
+  padding-bottom: 6px !important;
+}
+
+.u-padding-bottom-small {
+  padding-bottom: 12px !important;
+}
+
+.u-padding-bottom-large {
+  padding-bottom: 48px !important;
+}
+
+.u-padding-bottom-huge {
+  padding-bottom: 96px !important;
+}
+
+.u-padding-bottom-none {
+  padding-bottom: 0 !important;
+}
+
+.u-padding-left {
+  padding-left: 24px !important;
+}
+
+.u-padding-left-tiny {
+  padding-left: 6px !important;
+}
+
+.u-padding-left-small {
+  padding-left: 12px !important;
+}
+
+.u-padding-left-large {
+  padding-left: 48px !important;
+}
+
+.u-padding-left-huge {
+  padding-left: 96px !important;
+}
+
+.u-padding-left-none {
+  padding-left: 0 !important;
+}
+
+.u-padding-horizontal {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+
+.u-padding-horizontal-tiny {
+  padding-left: 6px !important;
+  padding-right: 6px !important;
+}
+
+.u-padding-horizontal-small {
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+.u-padding-horizontal-large {
+  padding-left: 48px !important;
+  padding-right: 48px !important;
+}
+
+.u-padding-horizontal-huge {
+  padding-left: 96px !important;
+  padding-right: 96px !important;
+}
+
+.u-padding-horizontal-none {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.u-padding-vertical {
+  padding-top: 24px !important;
+  padding-bottom: 24px !important;
+}
+
+.u-padding-vertical-tiny {
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+
+.u-padding-vertical-small {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}
+
+.u-padding-vertical-large {
+  padding-top: 48px !important;
+  padding-bottom: 48px !important;
+}
+
+.u-padding-vertical-huge {
+  padding-top: 96px !important;
+  padding-bottom: 96px !important;
+}
+
+.u-padding-vertical-none {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.u-margin {
+  margin: 24px !important;
+}
+
+.u-margin-tiny {
+  margin: 6px !important;
+}
+
+.u-margin-small {
+  margin: 12px !important;
+}
+
+.u-margin-large {
+  margin: 48px !important;
+}
+
+.u-margin-huge {
+  margin: 96px !important;
+}
+
+.u-margin-none {
+  margin: 0 !important;
+}
+
+.u-margin-top {
+  margin-top: 24px !important;
+}
+
+.u-margin-top-tiny {
+  margin-top: 6px !important;
+}
+
+.u-margin-top-small {
+  margin-top: 12px !important;
+}
+
+.u-margin-top-large {
+  margin-top: 48px !important;
+}
+
+.u-margin-top-huge {
+  margin-top: 96px !important;
+}
+
+.u-margin-top-none {
+  margin-top: 0 !important;
+}
+
+.u-margin-right {
+  margin-right: 24px !important;
+}
+
+.u-margin-right-tiny {
+  margin-right: 6px !important;
+}
+
+.u-margin-right-small {
+  margin-right: 12px !important;
+}
+
+.u-margin-right-large {
+  margin-right: 48px !important;
+}
+
+.u-margin-right-huge {
+  margin-right: 96px !important;
+}
+
+.u-margin-right-none {
+  margin-right: 0 !important;
+}
+
+.u-margin-bottom {
+  margin-bottom: 24px !important;
+}
+
+.u-margin-bottom-tiny {
+  margin-bottom: 6px !important;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 12px !important;
+}
+
+.u-margin-bottom-large {
+  margin-bottom: 48px !important;
+}
+
+.u-margin-bottom-huge {
+  margin-bottom: 96px !important;
+}
+
+.u-margin-bottom-none {
+  margin-bottom: 0 !important;
+}
+
+.u-margin-left {
+  margin-left: 24px !important;
+}
+
+.u-margin-left-tiny {
+  margin-left: 6px !important;
+}
+
+.u-margin-left-small {
+  margin-left: 12px !important;
+}
+
+.u-margin-left-large {
+  margin-left: 48px !important;
+}
+
+.u-margin-left-huge {
+  margin-left: 96px !important;
+}
+
+.u-margin-left-none {
+  margin-left: 0 !important;
+}
+
+.u-margin-horizontal {
+  margin-left: 24px !important;
+  margin-right: 24px !important;
+}
+
+.u-margin-horizontal-tiny {
+  margin-left: 6px !important;
+  margin-right: 6px !important;
+}
+
+.u-margin-horizontal-small {
+  margin-left: 12px !important;
+  margin-right: 12px !important;
+}
+
+.u-margin-horizontal-large {
+  margin-left: 48px !important;
+  margin-right: 48px !important;
+}
+
+.u-margin-horizontal-huge {
+  margin-left: 96px !important;
+  margin-right: 96px !important;
+}
+
+.u-margin-horizontal-none {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.u-margin-vertical {
+  margin-top: 24px !important;
+  margin-bottom: 24px !important;
+}
+
+.u-margin-vertical-tiny {
+  margin-top: 6px !important;
+  margin-bottom: 6px !important;
+}
+
+.u-margin-vertical-small {
+  margin-top: 12px !important;
+  margin-bottom: 12px !important;
+}
+
+.u-margin-vertical-large {
+  margin-top: 48px !important;
+  margin-bottom: 48px !important;
+}
+
+.u-margin-vertical-huge {
+  margin-top: 96px !important;
+  margin-bottom: 96px !important;
+}
+
+.u-margin-vertical-none {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.heading-input {
+  position: relative;
+  cursor: text;
+}
+
+.heading-input h3,
+.heading-input h2 {
+  width: 100%;
+  height: 100%;
+  min-height: 21px;
+  margin: 1px;
+  padding: 0;
+}
+
+.heading-input input {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 21px;
+  margin: 1px;
+  padding: 0;
+  outline-style: none;
+  overflow-wrap: break-word;
+  visibility: hidden;
+}
+
+/* ==========================================================================
+   #MAIN
+   ========================================================================== */
+.c-btn {
+  display: inline-block;
+  vertical-align: middle;
+  align-items: center;
+  font: inherit;
+  text-align: center;
+  margin: 0;
+  cursor: pointer;
+  padding: 12px 24px;
+  transition: all 300ms ease-in-out;
+  border-radius: 3px;
+}
+
+.c-btn {
+  background-color: rgb(155, 87, 232);
+  color: rgb(0, 0, 0);
+  border-color: rgb(64, 33, 66);
+  outline: none;
+}
+.c-btn:hover, .c-btn:focus, .c-btn:active {
+  background-color: rgb(131.0827586207, 87, 181);
+  color: rgb(0, 0, 0);
+}
+.c-btn:focus, .c-btn:active {
+  background-color: rgb(131.0827586207, 87, 181);
+  color: rgb(0, 0, 0);
+  outline: none;
+}
+
+/* ^Style variants
+   ========================================================================== */
+.c-btn--primary {
+  border-radius: 6px;
+  background-color: rgb(234, 234, 234);
+  color: rgb(155, 87, 232);
+  transition: background-color 0.2s linear, color 0.2s linear;
+}
+.c-btn--primary:hover, .c-btn--primary:focus, .c-btn--primary:active {
+  background-color: rgb(212.7272727273, 212.7272727273, 212.7272727273);
+  color: #ffffff;
+  text-decoration: none;
+}
+.c-btn--primary:focus, .c-btn--primary:active {
+  background-color: rgb(193.3884297521, 193.3884297521, 193.3884297521);
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.2rem rgb(155, 87, 232);
+}
+
+.c-btn--secondary {
+  border-radius: 3px;
+  background-color: rgb(64, 33, 66);
+  color: #000000;
+  transition: background-color 0.2s linear, color 0.2s linear;
+}
+.c-btn--secondary:hover, .c-btn--secondary:focus, .c-btn--secondary:active {
+  background-color: rgb(40.0454545455, 33, 40.5);
+  color: #ffffff;
+  text-decoration: none;
+}
+.c-btn--secondary:focus, .c-btn--secondary:active {
+  background-color: rgb(30.8241758242, 30.8241758242, 30.8241758242);
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.2rem rgb(40.0454545455, 33, 40.5);
+}
+
+.c-btn--tertiary {
+  border-radius: 3px;
+  background-color: rgb(119, 119, 255);
+  color: #000000;
+  transition: background-color 0.2s linear, color 0.2s linear;
+}
+.c-btn--tertiary:hover, .c-btn--tertiary:focus, .c-btn--tertiary:active {
+  background-color: rgb(119, 119, 229.5);
+  color: #ffffff;
+  text-decoration: none;
+}
+.c-btn--tertiary:focus, .c-btn--tertiary:active {
+  background-color: #7777cc;
+  box-shadow: 0 0 0 0.175rem white, 0 0 0 0.35rem rgb(119, 119, 229.5);
+}
+
+.btn--primary,
+.btn--secondary {
+  height: 28px;
+  line-height: 1.25;
+  padding: initial;
+  border-radius: 20px;
+  font-size: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.c-btn--action-1 {
+  width: 100%;
+  height: 45px;
+  margin-top: 14px;
+  border-radius: 8px;
+  background-color: rgb(119, 119, 255);
+  color: #ffffff;
+}
+.c-btn--action-1:hover, .c-btn--action-1:focus, .c-btn--action-1:active {
+  background-color: rgb(119, 119, 229.5);
+}
+.c-btn--action-1:focus, .c-btn--action-1:active {
+  background-color: rgb(119, 119, 229.5);
+}
+
+.c-btn--action-2 {
+  width: 100%;
+  height: 45px;
+  margin-top: 14px;
+  justify-content: center;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(155, 87, 232);
+  color: #ffffff;
+}
+.c-btn--action-2:hover, .c-btn--action-2:focus, .c-btn--action-2:active {
+  color: #ffffff;
+  background-color: rgb(137.0620689655, 87, 193.75);
+}
+.c-btn--action-2:focus, .c-btn--action-2:active {
+  color: #ffffff;
+  background-color: rgb(137.0620689655, 87, 193.75);
+}
+
+/* ^Color variants
+   ==========================================================================
+   No spacing properties, just color
+*/
+.btn-action--primary {
+  background-color: rgb(155, 87, 232) !important;
+  color: white;
+}
+.btn-action--primary:hover, .btn-action--primary:focus, .btn-action--primary:active {
+  background-color: rgb(143.0413793103, 87, 206.5) !important;
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.2rem rgb(155, 87, 232);
+}
+
+.btn-action--secondary {
+  background-color: rgb(64, 33, 66) !important;
+  color: white;
+}
+.btn-action--secondary:hover, .btn-action--secondary:focus, .btn-action--secondary:active {
+  background-color: rgb(40.0454545455, 33, 40.5) !important;
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.2rem rgb(64, 33, 66);
+}
+
+.btn--positive {
+  background-color: rgb(63, 153, 15) !important;
+  color: white;
+}
+.btn--positive:hover, .btn--positive:focus, .btn--positive:active {
+  color: white;
+  background-color: rgb(54.1304347826, 127.5, 15) !important;
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.2rem rgb(63, 153, 15);
+}
+
+.btn--negative {
+  background-color: rgb(159, 16, 46) !important;
+  color: white;
+}
+.btn--negative:hover, .btn--negative:focus, .btn--negative:active {
+  color: white;
+  background-color: rgb(133.5, 16, 40.6503496503) !important;
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.2rem rgb(159, 16, 46);
+}
+
+.btn--negative2 {
+  background-color: rgb(255, 0, 0) !important;
+  color: white;
+}
+.btn--negative2:hover, .btn--negative2:focus, .btn--negative2:active {
+  background-color: rgb(229.5, 0, 0) !important;
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.2rem rgb(255, 0, 0);
+}
+
+/*
+   ========================================================================== */
+.c-btn-modal-action {
+  height: 27px;
+  margin: 8px auto 0;
+  padding: 2px;
+  border-radius: 5px;
+  font-weight: 400;
+  font-weight: 400;
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+}
+.c-btn-modal-action[disabled=true] {
+  opacity: 0.6;
+  cursor: not-allowed !important;
+}
+.c-btn-modal-action:hover, .c-btn-modal-action:active, .c-btn-modal-action:focus {
+  color: #ffffff;
+}
+
+.btn-menu-list {
+  width: auto;
+  height: 25px;
+  margin: 5px 0px 0;
+  padding: 0px 8px;
+  font-size: 15px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  user-select: none;
+}
+.btn-menu-list:hover, .btn-menu-list:active, .btn-menu-list:focus {
+  background-color: unset;
+  color: unset;
+  text-decoration: underline;
+}
+
+.btn-subtle {
+  color: #ffffff;
+  display: block;
+  height: 32px;
+  width: 85%;
+  margin: 0px auto;
+  padding: 2px 5px;
+  background-color: rgba(100, 100, 100, 0.3);
+  border: none;
+  font-weight: 600;
+  font-size: 15px;
+}
+.btn-subtle:hover, .btn-subtle:active, .btn-subtle:focus {
+  background-color: rgba(100, 100, 100, 0.55);
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+/* ^Form buttons
+   ========================================================================== */
+.btn-submit {
+  background-color: rgb(63, 153, 15);
+  color: #ffffff;
+}
+.btn-submit:hover, .btn-submit:focus, .btn-submit:active {
+  background-color: rgb(58.5652173913, 140.25, 15);
+}
+.btn-submit:focus, .btn-submit:active {
+  background-color: rgb(54.1304347826, 127.5, 15);
+  color: #ffffff;
+}
+
+.btn-cancel {
+  background-color: rgb(14, 12, 12);
+  color: #ffffff;
+}
+.btn-cancel:hover, .btn-cancel:focus, .btn-cancel:active {
+  background-color: rgb(11.5145813735, 11.5145813735, 11.5145813735);
+}
+.btn-cancel:focus, .btn-cancel:active {
+  background-color: rgb(10.987432675, 10.987432675, 10.987432675);
+  box-shadow: 0 0 0 0.175rem white, 0 0 0 0.35rem rgb(14, 12, 12);
+}
+
+/* ^App buttons
+   ========================================================================== */
+.btn-menu {
+  display: inline-flex;
+  vertical-align: middle;
+  font: inherit;
+  text-align: center;
+  margin: 0;
+  cursor: pointer;
+  padding: 0px;
+  border-radius: 50%;
+  background: none;
+  color: #ffffff;
+  border: none;
+  outline: none;
+}
+.btn-menu:hover, .btn-menu:focus, .btn-menu:active {
+  background-color: rgb(14, 12, 12);
+  border: 1px solid rgb(153, 153, 153);
+}
+.btn-menu:focus, .btn-menu:active {
+  background-color: rgb(153, 153, 153);
+  border: 1px solid #333;
+}
+
+.btn-add {
+  background-color: rgb(68, 85, 187);
+  height: 25px;
+  width: fit-content;
+  padding: 0 10px;
+  font-size: 14px;
+  line-height: 18px;
+  border-radius: 12px;
+  color: #ffffff;
+  font-weight: 500;
+  border-width: unset;
+  border-style: none;
+}
+.btn-add:hover, .btn-add:focus, .btn-add:active {
+  background-color: rgb(68, 81.3571428571, 161.5);
+}
+.btn-add:focus, .btn-add:active {
+  background-color: rgb(68, 81.3571428571, 161.5);
+}
+
+.btn-dialog {
+  width: 70px;
+  height: 35px;
+  padding: unset;
+  background-color: rgba(137, 137, 137, 0.7490196078);
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.btn--archive {
+  background-color: rgb(155, 85, 20) !important;
+  color: #ffffff !important;
+}
+
+.btn--archive:hover {
+  background-color: rgb(104, 60.4444444444, 20) !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+.btn--edit {
+  background-color: rgba(137, 137, 137, 0.25) !important;
+}
+
+.btn--edit:hover {
+  background-color: rgba(137, 137, 137, 0.5) !important;
+  text-decoration: none !important;
+}
+
+/*
+   ========================================================================== */
+.hover-darker:hover {
+  background-color: rgba(0, 0, 0, 0.14);
+}
+
+/* ^Size variants
+   ========================================================================== */
+.c-btn--small {
+  padding: 6px 12px;
+}
+
+.c-btn--large {
+  padding: 24px 48px;
+}
+
+/* ^Ghost buttons
+   ========================================================================== */
+/**
+ * Ghost buttons have see-through backgrounds and are bordered.
+ */
+.c-btn--ghost {
+  border: 2px solid currentColor;
+  padding: 10px 22px;
+}
+.c-btn--ghost, .c-btn--ghost:hover, .c-btn--ghost:active, .c-btn--ghost:focus {
+  background: none;
+}
+.c-btn--ghost.c-btn--small {
+  padding: 4px 10px;
+}
+.c-btn--ghost.c-btn--large {
+  padding: 22px 46px;
+}
+.c-btn--ghost.c-btn--primary {
+  color: #4a8ec2;
+}
+.c-btn--ghost.c-btn--primary:hover, .c-btn--ghost.c-btn--primary:focus {
+  color: #3774a2;
+}
+.c-btn--ghost.c-btn--secondary {
+  color: #2f4054;
+}
+.c-btn--ghost.c-btn--secondary:hover, .c-btn--ghost.c-btn--secondary:focus {
+  color: #1d2733;
+}
+.c-btn--ghost.c-btn--tertiary {
+  color: #fff;
+}
+.c-btn--ghost.c-btn--tertiary:hover, .c-btn--ghost.c-btn--tertiary:focus {
+  color: #fff;
+}
+
+/*
+// TOOLS
+@import "_1-tools.mixins.scss";
+@import "_1-tools.mq.scss";
+@import "_1-tools.font-size.scss";
+@import "_1-tools.clearfix.scss";
+@import "_1-tools.hidden.scss";
+@import "node_modules/sass-mq/mq.scss";
+
+
+
+
+
+// GENERIC
+@import "_2-generic.box-sizing.scss";
+@import "_2-generic.normalize.scss";
+@import "_2-generic.reset.scss";
+@import "_2-generic.shared.scss";
+
+
+
+
+// ELEMENTS
+@import "_3-elements.page.scss";
+@import "_3-elements.headings.scss";
+@import "_3-elements.images.scss";
+@import "_3-elements.tables.scss";
+
+
+
+
+// OBJECTS
+//
+// Uncomment and add to this section as necessary.
+@import "_4-objects.wrapper.scss";
+@import "_4-objects.layout.scss";
+@import "_4-objects.flag.scss";
+@import "_4-objects.media.scss";
+@import "_4-objects.list-bare.scss";
+@import "_4-objects.list-inline.scss";
+@import "_4-objects.box.scss";
+@import "_4-objects.block.scss";
+@import "_4-objects.ratio.scss";
+@import "_4-objects.crop.scss";
+@import "_4-objects.pack.scss";
+@import "_4-objects.table.scss";
+
+
+
+
+// UTILITIES
+@import "_6-utilities.clearfix.scss";
+
+// Be aware that enabling offsets produces a large chunk of classes which might
+// bloat your CSS, depending on the amount of breakpoints you defined.
+// Only set this to `true` if you are absolutely sure about what you are doing.
+$inuit-offsets: true;
+@import "_6-utilities.widths.scss";
+@import "_6-utilities.headings.scss";
+@import "_6-utilities.spacings.scss";
+@import "_6-utilities.responsive-spacings.scss";
+@import "_6-utilities.print.scss";
+@import "_6-utilities.hide.scss";
+
+*/
+
+/*# sourceMappingURL=common.css.map */

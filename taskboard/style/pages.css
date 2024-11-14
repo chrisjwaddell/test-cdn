@@ -1,0 +1,769 @@
+/* ==========================================================================
+   #MAIN
+   ========================================================================== */
+/*
+    $color-  are global color variables
+    $global-- are globals set in .global.scss
+*/
+/* CUSTOM COLOURS */
+/* colour - color, background, border, hover */
+/* I may need 2 or 3 of these */
+/* border, hover, outline colors should be set
+  depending on what type of field it is
+  set in fields.scss
+*/
+/* ==========================================================================
+   #MAIN
+   ========================================================================== */
+/*
+    $color-  are global color variables
+    $global-- are globals set in .global.scss
+*/
+/* put global CSS variables here */
+/* l-colour or brand-colour */
+/* .<l-colour> { color: var(--<l-colour>); }
+.bg-<l-colour> { background-color: var(--<l-colour>); }
+.b-<l-colour> { border-color: var(--<l-colour>); }
+.hover-<l-colour>:hover { color: var(--<l-colour>); }
+.hover-bg-<l-colour>:hover { background-color: var(--<l-colour>); }
+.hover-b-<l-colour>:hover { border-color: var(--<l-colour>); } */
+:root {
+  --color-bg-board: rgb(188.8534482759, 150.75, 232);
+}
+
+/* ==========================================================================
+   #MIXINS
+   ========================================================================== */
+/* ==========================================================================
+   #MAIN
+   ========================================================================== */
+/* ==========================================================================
+   #BUTTONS
+   ========================================================================== */
+/*
+<div class="fld-container  fld-row  o-center-x">
+    <label for="pswd" class="fld-label  fld-row">Password</label>
+    <div class="password">
+        <input type="password" id="pswd" name="pw" class="e-input--primary  fld-row"
+            placeholder="Password" maxlength="50" aria-label="Password" tabindex="2">
+        <span>Show</span>
+    </div>
+</div>
+*/
+.fld-container .password {
+  position: relative;
+}
+
+.fld-container .password .password {
+  padding-right: 52px;
+}
+
+.fld-container .password span {
+  position: absolute;
+  right: 5px;
+  top: 4px;
+  width: 45px;
+  height: 30px;
+  display: inline-block;
+  font-size: 13px;
+  border-radius: 15px;
+  padding: 7px 5px;
+  vertical-align: middle;
+  color: rgb(68, 85, 187);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.fld-container .password span:hover {
+  background-color: rgba(100, 100, 100, 0.15);
+}
+
+input[type=password]::-ms-reveal {
+  display: none;
+}
+
+.no-js {
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  width: 300px;
+  height: 150px;
+  z-index: 1000;
+  background-color: #bb2255;
+  padding: 8px;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+/*
+// TOOLS
+@import "_1-tools.mixins.scss";
+@import "_1-tools.mq.scss";
+@import "_1-tools.font-size.scss";
+@import "_1-tools.clearfix.scss";
+@import "_1-tools.hidden.scss";
+@import "node_modules/sass-mq/mq.scss";
+
+
+
+
+
+// GENERIC
+@import "_2-generic.box-sizing.scss";
+@import "_2-generic.normalize.scss";
+@import "_2-generic.reset.scss";
+@import "_2-generic.shared.scss";
+
+
+
+
+// ELEMENTS
+@import "_3-elements.page.scss";
+@import "_3-elements.headings.scss";
+@import "_3-elements.images.scss";
+@import "_3-elements.tables.scss";
+
+
+
+
+// OBJECTS
+//
+// Uncomment and add to this section as necessary.
+@import "_4-objects.wrapper.scss";
+@import "_4-objects.layout.scss";
+@import "_4-objects.flag.scss";
+@import "_4-objects.media.scss";
+@import "_4-objects.list-bare.scss";
+@import "_4-objects.list-inline.scss";
+@import "_4-objects.box.scss";
+@import "_4-objects.block.scss";
+@import "_4-objects.ratio.scss";
+@import "_4-objects.crop.scss";
+@import "_4-objects.pack.scss";
+@import "_4-objects.table.scss";
+
+
+
+
+// UTILITIES
+@import "_6-utilities.clearfix.scss";
+
+// Be aware that enabling offsets produces a large chunk of classes which might
+// bloat your CSS, depending on the amount of breakpoints you defined.
+// Only set this to `true` if you are absolutely sure about what you are doing.
+$inuit-offsets: true;
+@import "_6-utilities.widths.scss";
+@import "_6-utilities.headings.scss";
+@import "_6-utilities.spacings.scss";
+@import "_6-utilities.responsive-spacings.scss";
+@import "_6-utilities.print.scss";
+@import "_6-utilities.hide.scss";
+
+*/
+/* ==========================================================================
+   #MAIN
+   ========================================================================== */
+body {
+  /* background-color: #ffa000; */
+  background-color: #ffffff;
+  margin: 0;
+}
+
+.c-strip .c-btn {
+  width: auto !important;
+  margin: 0 15px !important;
+  font-weight: 500 !important;
+}
+
+.strip__logo {
+  margin-left: 100px;
+}
+
+.strip__btns {
+  text-align: right;
+}
+
+.container {
+  width: 800px;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container p {
+  font-size: 20px;
+}
+
+header h1 {
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.login .login__title {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border-radius: 8px 8px 0 0/8px 8px 0 0;
+  margin: 0;
+}
+
+.login h3 {
+  display: block;
+  width: 100%;
+  height: 35px;
+  margin: 0;
+  padding: 7px 0px;
+  /* margin: 0px auto 15px; */
+  text-align: center;
+  font-size: 28px;
+  line-height: 32px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  background-color: #6644cc;
+}
+
+.login__close {
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  /* top: calc(50% - 135px - 55px);
+  left: calc(50% + 175px + 15px); */
+  width: 40px;
+  height: 40px;
+  margin: 0 !important;
+  z-index: 2250;
+  margin: 0 auto;
+  pointer-events: auto;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.login__close svg {
+  display: inline-block;
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+  padding: 5px 5px;
+  margin: 0 auto;
+  margin: auto;
+  stroke: rgb(255, 255, 255);
+  stroke-width: 3px;
+}
+
+.login__close svg:not(:root) {
+  overflow: hidden;
+}
+
+.login__close:hover {
+  background-color: rgb(200, 200, 200);
+}
+
+.login__close:hover svg {
+  stroke: black;
+}
+
+.login__main {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  pointer-events: all !important;
+  border-radius: 0 0 12px 12px/0 0 12px 12px;
+  border-top: none;
+  border-right: 4px solid #6644cc;
+  border-bottom: 4px solid #6644cc;
+  border-left: 4px solid #6644cc;
+}
+
+.login div {
+  line-height: 1.25;
+  font-size: 20px;
+  margin: 5px auto;
+}
+
+.login__field {
+  display: flex;
+  flex-direction: column;
+}
+
+form label,
+form input,
+form button {
+  display: inline-block;
+}
+
+.login__password {
+  /* display: inline-block; */
+  /* display: inline; */
+  /* width: 350px; */
+  margin: 10px auto;
+  text-align: right;
+  color: #6644cc;
+  font-size: 18px;
+  /* text-decoration: none; */
+}
+
+.login__password:hover {
+  text-decoration: underline;
+}
+
+.message {
+  display: inline-block;
+  width: 320px;
+  height: 27px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #cccccc;
+  color: #ff0000;
+  text-align: center;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.message:empty {
+  background-color: transparent;
+}
+
+@keyframes flash {
+  0%, 33%, 66%, 100% {
+    opacity: 1;
+  }
+  16%, 49%, 82% {
+    opacity: 0;
+  }
+}
+.flash {
+  animation-name: flash;
+}
+
+#name {
+  display: none;
+}
+
+form button {
+  width: 100px;
+  margin: 15px auto;
+  padding: 5px 5px;
+  line-height: 1.25;
+  font-size: 16px;
+  font-weight: 600;
+  outline: none;
+}
+
+.c-btn.login,
+.c-strip .login {
+  width: 350px;
+  height: 50px;
+  /* background-color: #22ccaa; */
+  background-color: #6644cc;
+  font-size: 22px;
+  font-weight: 700;
+  /* display: inline-block; */
+}
+
+.c-btn.login:hover,
+.c-btn.login:focus,
+.c-btn.login:active {
+  text-decoration: none;
+  background-color: #5230b8;
+}
+
+.login__main .c-btn,
+.c-strip .c-btn {
+  border-radius: 30px;
+  border: none;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 12px auto;
+}
+
+.c-btn.createuser,
+.c-btn.signup {
+  width: 300px;
+  height: 50px;
+  /* background-color: #22ccaa; */
+  background-color: #64d21d;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.c-btn.createuser:hover,
+.c-btn.createuser:focus,
+.c-btn.createuser:active {
+  text-decoration: none;
+  background-color: #50be14;
+}
+
+.c-btn.signup:hover,
+.c-btn.signup:focus,
+.c-btn.signup:active {
+  text-decoration: none;
+  background-color: #50be14;
+}
+
+header {
+  /* flex-direction: row; */
+  padding: 110px 20px;
+  background-color: #ffa000;
+}
+
+header > div {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.banner__content {
+  flex: 1;
+  padding: 40px 50px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #2244ff;
+}
+
+.banner__content h1 {
+  font-size: 40px;
+}
+
+.banner__content p {
+  font-size: 22px;
+}
+
+header img {
+  width: 100%;
+  flex: 1;
+  /* padding-right: 25px; */
+}
+
+/* loas - login associated pages */
+header.loas {
+  width: 100%;
+  height: 100px;
+  /* text-align: center; */
+  margin: 70px auto 40px;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+.loas__logo {
+  display: flex;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+}
+
+.loas__main {
+  margin: 0 auto;
+}
+
+.loas__main h1 {
+  text-align: center;
+}
+
+.loas__main article {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.loas__anim-main {
+  width: 100%;
+}
+
+.loas__anim {
+  position: relative;
+  width: 55px;
+  height: 55px;
+  margin: 20px auto;
+}
+
+.loas__envelope svg {
+  fill: #ffa000;
+}
+
+.loas__envelope {
+  position: absolute;
+  -webkit-animation: mailsent-movement 5s infinite;
+  animation: mailsent-movement 5s infinite;
+}
+
+@-moz-keyframes mailsent-movement {
+  0% {
+    transform: translate(-250px);
+  }
+  50% {
+    transform: translate(0px);
+  }
+  100% {
+    transform: translate(250px);
+  }
+}
+@-webkit-keyframes mailsent-movement {
+  0% {
+    transform: translate(-250px);
+  }
+  50% {
+    transform: translate(0px);
+  }
+  100% {
+    transform: translate(250px);
+  }
+}
+@-o-keyframes mailsent-movement {
+  0% {
+    transform: translate(-250px);
+  }
+  50% {
+    transform: translate(0px);
+  }
+  100% {
+    transform: translate(250px);
+  }
+}
+@keyframes mailsent-movement {
+  0% {
+    transform: translate(-250px);
+  }
+  50% {
+    transform: translate(0px);
+  }
+  100% {
+    transform: translate(250px);
+  }
+}
+.loas__envelope .line {
+  position: absolute;
+  display: block;
+  width: 15px;
+  height: 2px;
+  background: #ffa000;
+  -webkit-animation: mailsent-lines 5s infinite;
+  animation: mailsent-lines 5s infinite;
+}
+
+@-webkit-keyframes mailsent-lines {
+  40% {
+    opacity: 1;
+  }
+  41% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  61% {
+    opacity: 1;
+  }
+}
+@-o-keyframes mailsent-lines {
+  40% {
+    opacity: 1;
+  }
+  41% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  61% {
+    opacity: 1;
+  }
+}
+@keyframes mailsent-lines {
+  40% {
+    opacity: 1;
+  }
+  41% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  61% {
+    opacity: 1;
+  }
+}
+.line1 {
+  left: -14px;
+  top: 12px;
+}
+
+.line2 {
+  left: -9px;
+  top: 24px;
+}
+
+.line3 {
+  left: -14px;
+  top: 36px;
+}
+
+.loas__main p {
+  padding-top: 5px;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: Arial;
+  text-align: left;
+}
+
+.box {
+  position: relative;
+  width: 450px;
+  margin: 50px auto 25px;
+  border-radius: 15px;
+  background-color: #ccccff;
+  border: 1px solid rgb(155, 87, 232);
+}
+
+.box h1 {
+  width: 100%;
+  text-align: center;
+  margin: 0 0 15px;
+  border-radius: 15px 15px 0 0/15px 15px 0 0;
+  padding: 6px;
+  font-size: 25px;
+  color: #ffffff;
+  background-color: rgb(155, 87, 232);
+}
+
+.box__descr {
+  padding: 0 20px;
+}
+
+.box__descr p {
+  margin: 0;
+}
+
+.error-msg {
+  width: 250px;
+  margin: 0 auto;
+}
+
+.warning {
+  width: 375px;
+  min-height: 20px;
+  font-size: 14px;
+  margin: 10px auto;
+  color: white;
+}
+
+.warning p {
+  margin: 0;
+  padding: 1px 8px;
+  background-color: red;
+  visibility: visible;
+}
+
+.warning p:empty {
+  visibility: hidden;
+}
+
+.fld-container.login {
+  height: 60px;
+  min-height: 40px;
+  margin-bottom: 30px;
+}
+
+#login .remember {
+  height: 30px;
+  min-height: 30px;
+}
+
+.fld-container .password {
+  position: relative;
+}
+
+.remember label {
+  font-size: 16px;
+  text-align: left;
+  margin: 4px auto 4px 10px;
+  height: 18px;
+}
+
+.forgot {
+  margin-top: 40px;
+}
+
+.signup {
+  margin-top: 8px;
+}
+
+.forgot,
+.signup {
+  height: 25px;
+  min-height: 25px;
+}
+
+.signup {
+  margin-bottom: 3rem;
+}
+
+.forgot a,
+.signup a,
+.signup p {
+  font-size: 14px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.forgot a,
+.signup a {
+  color: #7b00b1;
+}
+
+.forgot a:hover,
+.signup a:hover {
+  color: rgb(96.4194915254, 0, 138.75);
+  border-radius: 12px;
+  border: 1px solid currentcolor;
+  text-decoration: underline;
+}
+
+.box.signupbox {
+  background-color: #000000;
+}
+
+form#signup .fld-container label {
+  color: #ffffff;
+}
+
+#signup .pswd-req,
+#changepassword .pswd-req {
+  flex: 1;
+  border: 1px solid #777777;
+  background-color: #cccccc;
+  gap: 4px;
+}
+
+#signup .pswd-req,
+#changepassword .pswd-req p,
+p.pswd-req__descr {
+  margin: 0;
+  font-size: 12px;
+  font-family: "Lucida Sans", "Lucida Grande";
+}
+
+.pswd-req .state {
+  width: 11px;
+  height: 12px;
+  background-position: center;
+  background-size: auto;
+  margin-left: 8px;
+}
+
+.pswd-req__descr {
+  margin: 0;
+  padding: 0;
+}
+
+/*# sourceMappingURL=pages.css.map */
