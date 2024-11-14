@@ -941,12 +941,12 @@ ul.section-2 {
 }
 
 .list__header-description {
+  max-height: 52px;
   padding: 1px 7px;
   border-left: 1px solid black;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
   background-color: #dddddd;
-  max-height: 45px;
   word-wrap: break-word;
   word-break: break-word;
   overflow: hidden;
@@ -954,7 +954,7 @@ ul.section-2 {
 
 .list__header-description p {
   margin: 0;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .list__container .plus {
