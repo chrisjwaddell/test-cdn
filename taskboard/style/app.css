@@ -783,6 +783,11 @@ ul.section-2 {
   line-height: 34px;
 }
 
+.board__title.heading-input h2 {
+  overflow: hidden;
+  word-break: break-all;
+}
+
 .board__title.heading-input input {
   height: 34px;
   background-color: #eeeeee;
@@ -892,6 +897,11 @@ ul.section-2 {
   padding: 0 8px;
 }
 
+.list__header .title {
+  overflow: hidden;
+  word-break: break-all;
+}
+
 .list__header .title,
 .list__header .heading-input input {
   height: 21px;
@@ -946,7 +956,7 @@ ul.section-2 {
   border-left: 1px solid black;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
-  background-color: #dddddd;
+  background-color: #ffff00;
   word-wrap: break-word;
   word-break: break-word;
   overflow: hidden;
@@ -1530,6 +1540,11 @@ ul.section-2 {
   position: absolute;
   right: 20px;
   bottom: 40px;
+}
+
+.MUI-Modal.taskEdit .heading-input h3 {
+  overflow: hidden;
+  word-break: break-all;
 }
 
 .MUI-Modal.taskEdit .heading-input h3,
