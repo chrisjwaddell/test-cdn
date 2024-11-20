@@ -741,6 +741,7 @@ ul.section-2 {
   height: 40px;
   background-color: #ffffff;
   padding: 0 20px;
+  overflow: hidden;
 }
 
 .board__header .filter {
@@ -895,6 +896,7 @@ ul.section-2 {
   border-radius: 12px 12px 0 0/12px 12px 0 0;
   background-color: rgb(153, 153, 153);
   padding: 0 8px;
+  overflow: hidden;
 }
 
 .list__header .title {
@@ -956,7 +958,7 @@ ul.section-2 {
   border-left: 1px solid black;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
-  background-color: #ffff00;
+  background-color: #ffffaf;
   word-wrap: break-word;
   word-break: break-word;
   overflow: hidden;
