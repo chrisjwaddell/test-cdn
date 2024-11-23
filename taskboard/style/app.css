@@ -1832,12 +1832,12 @@ ul.section-2 {
 }
 
 .MUI-Modal .addTag ul {
+  position: relative;
   width: 165px;
+  margin: 2px 0;
   list-style: none;
   overflow-y: hidden;
   height: 21px;
-  position: relative;
-  margin-top: 2px;
   border-radius: 4px;
   padding: 2px;
   background-color: #ffffff;
