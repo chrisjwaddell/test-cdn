@@ -2440,4 +2440,8 @@ main > div {
   pointer-events: none;
 }
 
+.logo-img {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 439.5 444'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23fff;%7D.cls-2,.cls-4%7Bfill:none;stroke:%239f6ba4;stroke-miterlimit:10;%7D.cls-2%7Bstroke-width:3px;%7D.cls-3%7Bfill:%23a06ba4;%7D.cls-4%7Bstroke-width:9px;%7D%3C/style%3E%3C/defs%3E%3Crect class='cls-1' x='150' y='15' width='266' height='210' rx='27'/%3E%3Crect class='cls-2' x='150' y='15' width='266' height='210' rx='27'/%3E%3Crect class='cls-3' x='155' y='19' width='256' height='40' rx='21'/%3E%3Crect class='cls-4' x='155' y='19' width='256' height='40' rx='21'/%3E%3Crect class='cls-1' x='88' y='115' width='266' height='210' rx='27'/%3E%3Crect class='cls-2' x='88' y='115' width='266' height='210' rx='27'/%3E%3Crect class='cls-3' x='93' y='119' width='256' height='40' rx='21'/%3E%3Crect class='cls-4' x='93' y='119' width='256' height='40' rx='21'/%3E%3Crect class='cls-1' x='24' y='215' width='266' height='210' rx='27'/%3E%3Crect class='cls-2' x='24' y='215' width='266' height='210' rx='27'/%3E%3Crect class='cls-3' x='29' y='220' width='256' height='40' rx='21'/%3E%3Crect class='cls-4' x='29' y='220' width='256' height='40' rx='21'/%3E%3Crect class='cls-3' x='24' y='244' width='266' height='22'/%3E%3Crect class='cls-3' x='88' y='144' width='266' height='22'/%3E%3Crect class='cls-3' x='150' y='44' width='266' height='22'/%3E%3C/svg%3E");
+}
+
 /*# sourceMappingURL=app.css.map */
