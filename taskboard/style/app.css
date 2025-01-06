@@ -235,9 +235,10 @@ nav {
 }
 
 .nav__logo {
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   margin-left: 50px;
+  background-color: yellow;
 }
 
 .nav__icon {
@@ -245,11 +246,6 @@ nav {
   height: 30px;
   margin: 0 10px;
   border-radius: 8px;
-}
-
-.nav__logo svg {
-  color: #ffffff;
-  fill: #ffffff;
 }
 
 .nav__icon svg {
